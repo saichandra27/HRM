@@ -1,0 +1,35 @@
+﻿@model string
+
+@Html.HiddenFor(m => m)
+@Html.ValidationMessageFor(m => m)
+
+<script>
+    function success(e) {
+        var imagePath = e.response.Attachments;
+        console.log(imagePath);
+        $("#Attachments").val($("#Attachments").val() + imagePath).trigger("change");
+
+    }
+
+    function deleteattachment(val) {
+        alert(val);
+    }
+</script>
+
+@(Html.Kendo().Upload()
+                                                                                .Name("files")
+                                                                                .Multiple(true)
+                                                                                .Async(a => a
+                                                                                    .Save("SaveMulitple", "Upload")
+                                                                                    .AutoUpload(true)
+                                                                                )
+                                                                                .Events(e => e.Success("success"))
+)
+
+<div>
+    <label>Files:</label>
+</div>
+<div id="lblfiles"></div>
+
+
+

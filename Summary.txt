@@ -1,0 +1,11 @@
+1. Model,View,Controller.
+2. Exploring Controller,Handler and Routing.
+3. Working with data, introduction to entityframework.
+4. Performing the read/write operations.
+5. exploring the linq.
+6. data migrations in entityframework
+7. working with soft delete.
+8. working with exception handling.
+9. working with audit log trail.
+10.working with telerik controls, datasources and data binding.
+11. Using Commong methods for read/write operations.

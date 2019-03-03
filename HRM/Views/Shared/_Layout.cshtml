@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendo/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+
+</head>
+<body>
+
+    
+
+
+
+    <div  class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("HRM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+
+                @Html.Partial("_LoginPartial")
+            </div>
+            <div class="navbar-collapse">
+                <nav id="primary_nav_wrap">
+                    <ul>
+                        <li class="current-menu-item"><a href="#">Home</a></li>
+                        <li>
+                            <a href="#">Admin</a>
+
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("User Management", "ManageUsers", "Profile")
+                                </li>
+                                <li>
+                                    <a href="#">Job</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("Job Titles", "Index", "Job")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Pay Grades", "PayGrade", "Job")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Employment Status", "EmploymentStatus", "Job")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Job Categories", "JobCategory", "Job")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Job Shifts", "JobShift", "Job")
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Organisation</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("General Information", "GeneralInformation", "Organisation")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Locations", "Locations", "Organisation")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Nationalities", "Nationalities", "Organisation")
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Qualifications</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("Skills", "Skills", "Qualification")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Education", "Education", "Qualification")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Certifications", "Certifications", "Qualification")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Languages", "Languages", "Qualification")
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">General Settings</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("City", "City", "GeneralSettings")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("State", "State", "GeneralSettings")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Country", "Country", "GeneralSettings")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Nationalities", "Nationalities", "GeneralSettings")
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Configurations</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("Email Configurations", "EmailConfigurations", "Configurations")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Email Subscrpitions", "EmailSubscrpitions", "Configurations")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Enable Module to Users", "AssignRoleToUser", "Role")
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">PIM Module</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Configuration</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Optional Fields</a>
+                                        </li>
+                                        <li><a href="#">Custom Fields</a></li>
+                                        <li><a href="#">Data Import</a></li>
+                                        <li><a href="#">Reporting Methods</a></li>
+                                        <li><a href="#">Termination Reasons</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Employee Listing</a>
+                                    @Html.ActionLink("Employee Listing", "EmployeeListing", "Profile")
+                                </li>
+                                <li>
+                                    <a href="#">Add Employee</a>
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("Personal details", "Personal", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Contact details", "Contact", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Emergency Contact", "Emergency", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Dependents", "Dependents", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Immigration", "Immigration", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Job", "Job", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Salary", "Salary", "Profile")
+                                        </li>
+                                        <li>
+                                            <a href="#">Reporting To</a>
+                                            @Html.ActionLink("Reporting To", "Reporting", "Profile")
+                                        </li>
+                                        <li>
+                                            <a href="#">Qualifications</a>
+                                            @Html.ActionLink("Qualifications", "Qualifications", "Profile")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Certifications", "Certifications", "Profile")
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <br />
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

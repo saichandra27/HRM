@@ -1,0 +1,61 @@
+﻿@using HRM.Data.Entities.User
+
+@model Dependent
+
+
+@using (Html.BeginForm("SaveDependentInfo", "Profile", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <div class="fieldlist">
+            @Html.Label("Name of the Relative")
+            @Html.TextBoxFor(Model => Model.Name, new { id = "Name" })
+
+            @Html.Label("RelationShip with the person")
+            @(
+                        Html.DropDownListFor(Model => Model.Relationship,
+                        Enumerable.Empty<SelectListItem>(),
+                        "-- Please select relationship --",
+                        new { id = "ddlRelationship" })
+            )
+
+            @Html.Label("Other Relationship")
+            @Html.TextBoxFor(Model => Model.Relationship, new { id = "OtherRelationShip" })
+
+            @Html.Label("National Identification Number")
+            @Html.TextBoxFor(Model => Model.NationalIdentityNumber, new { id = "IDNumber" })
+
+            @Html.Label("DOB")
+            @Html.TextBoxFor(Model => Model.DOB, new { id = "DOB" })
+
+            @Html.Label("Other Information")
+            @Html.TextBoxFor(Model => Model.OtherInformation, new { id = "Name" })
+
+            @*<label for="bio">Biography</label>
+
+                <textarea id="bio" name="bio"></textarea>*@
+        </div>
+    </div>
+}
+
+
+<style type="text/css">
+    .fieldlist {
+        margin: 0 0 -2em;
+        padding: 0;
+    }
+
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 2em;
+        }
+
+        .fieldlist label {
+            display: block;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+</style>

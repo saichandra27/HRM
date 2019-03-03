@@ -1,0 +1,74 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewBag.Title = "Manage Roles";
+}
+
+@using (Html.BeginForm("AssignRoleToUser", "Role"))
+{
+    <div class="form-group text-left">
+        <table>
+            <tr>
+                <th>
+                    Enable Module for the User      <br />
+                </th>
+            </tr>
+            <tr>
+                <th>Users</th>
+            </tr>
+            <tr>
+                <td>
+                    @(Html.Kendo().ComboBox()
+                                        .Name("userid")
+                                        .Placeholder("Select size...")
+                                        .DataTextField("Text")
+                                        .DataValueField("Value")
+                                        .DataSource(source =>
+                                        {
+                                            source.Read(read =>
+                                            {
+                                                read.Action("GetUserslstJsonResult", "Role");
+                                            });
+                                        })
+                                        .SelectedIndex(0)
+                                        .Suggest(true)
+                                        .HtmlAttributes(new { style = "width:100%;" })
+                    )
+                </td>
+            </tr>
+            <tr>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>
+                    @foreach (var role in Model)
+                    {
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                   name="roles"
+                                   value="@role.Name" /> @role.Name
+                            </label>
+                        </div>
+                    }
+                
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group text-left">
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+<style type="text/css">
+    table, th, tr, td {
+        margin: 15px;
+        padding: 5px;
+    }
+</style>

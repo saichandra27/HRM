@@ -1,0 +1,78 @@
+﻿@using HRM.Data.Entities.User
+
+@model Contact
+
+
+@using (Html.BeginForm("SaveContactInfo", "Profile", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <div class="fieldlist">
+
+            @Html.HiddenFor(Model => Model.ID)
+
+            @Html.Label("Address Street1")
+            @Html.EditorFor(Model => Model.AddressStree1, new { id = "Name" })
+
+            @Html.Label("Address Street2")
+            @Html.TextBoxFor(Model => Model.AddressStree2, new { id = "Name" })
+
+            @Html.Label("City")
+            @(
+                                Html.DropDownListFor(Model => Model.City,
+                                Enumerable.Empty<SelectListItem>(),
+                                "-- Please City from the dropdown --",
+                                new { id = "ddlCity" })
+            )
+
+            @Html.Label("City")
+            @(
+                                Html.DropDownListFor(Model => Model.State,
+                                Enumerable.Empty<SelectListItem>(),
+                                "-- Please State from the dropdown --",
+                                new { id = "ddlState" })
+            )
+
+            @Html.Label("Country")
+            @(
+                                Html.DropDownListFor(Model => Model.Country,
+                                Enumerable.Empty<SelectListItem>(),
+                                "-- Please Country from the dropdown --",
+                                new { id = "ddlCountry" })
+            )
+
+            @Html.Label("ZipCode")
+            @Html.TextBoxFor(Model => Model.ZipCode, new { id = "Name" })
+
+            @Html.ActionLink("Submit", "SaveUserInfo", "Profile")
+
+            @Html.Kendo().Button().Name("Default").Content("Default").HtmlAttributes(new { @class = "k-button" })
+
+            @*<label for="bio">Biography</label>
+
+                <textarea id="bio" name="bio"></textarea>*@
+        </div>
+    </div>
+}
+
+
+<style type="text/css">
+    .fieldlist {
+        margin: 0 0 -2em;
+        padding: 0;
+    }
+
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 2em;
+        }
+
+        .fieldlist label {
+            display: block;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+</style>

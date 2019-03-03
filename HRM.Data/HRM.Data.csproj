@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRM.Data</RootNamespace>
+    <AssemblyName>HRM.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI">
+      <HintPath>..\dlls\EntityFramework.MappingAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\dlls\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\dlls\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TrackerEnabledDbContext.Common">
+      <HintPath>..\dlls\TrackerEnabledDbContext.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="TrackerEnabledDbContext.Identity">
+      <HintPath>..\dlls\TrackerEnabledDbContext.Identity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="DbContext\HRMDbContext.cs" />
+    <Compile Include="Migrations\201811130826486_HRMDB-v1.cs" />
+    <Compile Include="Migrations\201811130826486_HRMDB-v1.Designer.cs">
+      <DependentUpon>201811130826486_HRMDB-v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Category.cs" />
+    <Compile Include="Models\Entities\General\BankAccount.cs" />
+    <Compile Include="Models\Entities\General\City.cs" />
+    <Compile Include="Models\Entities\General\Country.cs" />
+    <Compile Include="Models\Entities\General\EmailConfiguraiton.cs" />
+    <Compile Include="Models\Entities\General\EmailSubscription.cs" />
+    <Compile Include="Models\Entities\General\ExternalMembership.cs" />
+    <Compile Include="Models\Entities\General\Language.cs" />
+    <Compile Include="Models\Entities\General\Nationality.cs" />
+    <Compile Include="Models\Entities\General\State.cs" />
+    <Compile Include="Models\Entities\General\Currency.cs" />
+    <Compile Include="Models\Entities\General\Grades.cs" />
+    <Compile Include="Models\Entities\Job\EmploymentStatus.cs" />
+    <Compile Include="Models\Entities\Job\JobCategory.cs" />
+    <Compile Include="Models\Entities\Job\JobShifts.cs" />
+    <Compile Include="Models\Entities\Job\JobTitle.cs" />
+    <Compile Include="Models\Entities\Job\PayGrade.cs" />
+    <Compile Include="Models\Entities\Job\SalaryComponent.cs" />
+    <Compile Include="Models\Entities\Leaves\LeaveTypes.cs" />
+    <Compile Include="Models\Entities\Module\ModuleRole.cs" />
+    <Compile Include="Models\Entities\Module\Module.cs" />
+    <Compile Include="Models\Entities\Organistion\Organisation.cs" />
+    <Compile Include="Models\Entities\Organistion\Location.cs" />
+    <Compile Include="Models\Entities\Qualification\Certification.cs" />
+    <Compile Include="Models\Entities\Qualification\EducationLevel.cs" />
+    <Compile Include="Models\Entities\Qualification\Skill.cs" />
+    <Compile Include="Models\Entities\Role.cs" />
+    <Compile Include="Models\Entities\User\Contact.cs" />
+    <Compile Include="Models\Entities\User\Dependent.cs" />
+    <Compile Include="Models\Entities\User\Education.cs" />
+    <Compile Include="Models\Entities\User\EmergencyContact.cs" />
+    <Compile Include="Models\Entities\User\HRMUser.cs" />
+    <Compile Include="Models\Entities\User\Immigration.cs" />
+    <Compile Include="Models\Entities\User\Job.cs" />
+    <Compile Include="Models\Entities\User\UserLanguage.cs" />
+    <Compile Include="Models\Entities\User\UserSkill.cs" />
+    <Compile Include="Models\Entities\User\WorkExperience.cs" />
+    <Compile Include="Models\Entities\User\Salary.cs" />
+    <Compile Include="Models\Entities\User\Subordinate.cs" />
+    <Compile Include="Models\Entities\User\Supervisor.cs" />
+    <Compile Include="Models\Entities\User\UserIdentification.cs" />
+    <Compile Include="Models\Entities\User\Personal.cs" />
+    <Compile Include="Interface\IRecordInfo.cs" />
+    <Compile Include="Models\LeaveTypeViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRM.Common\HRM.Common.csproj">
+      <Project>{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}</Project>
+      <Name>HRM.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrations\AddMigration.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811130826486_HRMDB-v1.resx">
+      <DependentUpon>201811130826486_HRMDB-v1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+﻿@(Html.Kendo().Grid<HRM.Data.Entities.Leaves.LeaveTypes>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Title).Width(225);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.PopUp))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .HtmlAttributes(new { style = "height:120px;" })
+    .HtmlAttributes(new { style = "width:650px;" })
+    .DataSource(dataSource => dataSource
+    .Ajax()
+    .PageSize(20)
+    .Events(events => events.Error("error_handler"))
+    .Model(model => model.Id(p => p.ID))
+    .Create(create => create.Action("EditingPopup_Create", "LeaveTypes"))
+    .Read(read => read.Action("EditingPopup_Read", "LeaveTypes"))
+    .Update(update => update.Action("EditingPopup_Update", "LeaveTypes"))
+    .Destroy(delete => delete.Action("EditingPopup_Destroy", "LeaveTypes"))
+    )
+)
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

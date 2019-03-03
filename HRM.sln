@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM", "HRM\HRM.csproj", "{29B4E7B1-D8A3-4452-AC6E-338659307273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB0AF07E-C63D-4B2A-B98A-4EC2442DE894}"
+	ProjectSection(SolutionItems) = preProject
+		dlls\Kendo.Mvc.dll = dlls\Kendo.Mvc.dll
+		Log.txt = Log.txt
+		dlls\log4net.dll = dlls\log4net.dll
+		..\..\..\..\Desktop\Summary.txt = ..\..\..\..\Desktop\Summary.txt
+		dlls\TrackerEnabledDbContext.Common.dll = dlls\TrackerEnabledDbContext.Common.dll
+		dlls\TrackerEnabledDbContext.Identity.dll = dlls\TrackerEnabledDbContext.Identity.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Common", "HRM.Common\HRM.Common.csproj", "{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Data", "HRM.Data\HRM.Data.csproj", "{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Services", "HRM.Services\HRM.Services.csproj", "{9435E559-A0AA-478B-A24A-DABA7A699840}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29B4E7B1-D8A3-4452-AC6E-338659307273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B4E7B1-D8A3-4452-AC6E-338659307273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B4E7B1-D8A3-4452-AC6E-338659307273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B4E7B1-D8A3-4452-AC6E-338659307273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D089C3B0-BE18-436D-AE0B-ECCEB9693D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D3FB2C-7D1C-485B-A61F-8D81DC935283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9435E559-A0AA-478B-A24A-DABA7A699840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9435E559-A0AA-478B-A24A-DABA7A699840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9435E559-A0AA-478B-A24A-DABA7A699840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9435E559-A0AA-478B-A24A-DABA7A699840}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8087BCA5-5C83-4775-A687-33CE2351168E}
+	EndGlobalSection
+EndGlobal

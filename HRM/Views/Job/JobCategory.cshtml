@@ -1,0 +1,43 @@
+﻿@(Html.Kendo().Grid<HRM.Data.Entities.Job.JobCategory>()
+                .Name("grdJobCategory")
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.Title).Width(225);
+                    columns.Bound(p => p.Attachments).Width(225);
+                    columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+                })
+                .ToolBar(toolbar => toolbar.Create())
+                .Editable(editable => editable.Mode(GridEditMode.PopUp))
+                .Pageable()
+                .Sortable()
+                .Scrollable()
+                .HtmlAttributes(new { style = "height:120px;" })
+                .HtmlAttributes(new { style = "width:650px;" })
+                .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .Events(events => events.Error("error_handler"))
+                .Model(model => model.Id(p => p.ID))
+                .Read(read => read.Action("JobCategoryPopup_Read", "Job"))
+                .Create(create => create.Action("JobCategoryPopup_Create", "Job"))
+                .Update(update => update.Action("JobCategory_Update", "Job"))
+                .Destroy(delete => delete.Action("JobCategoryp_Destroy", "Job"))
+                )
+)
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
+
+

@@ -1,0 +1,35 @@
+﻿@(Html.Kendo().TabStrip()
+                        .Name("UserInfo")
+                        .HtmlAttributes(new { id= "tabstrip" })
+                         .TabPosition(TabStripTabPosition.Left)
+                        .Scrollable(true)
+                        .Items(tabstrip =>
+                        {
+                            tabstrip.Add().Text("Contact Info")
+                            .Selected(true)
+                            .LoadContentFrom("Contact", "Profile");
+                            tabstrip.Add().Text("Dependent Info")
+                            .LoadContentFrom("Dependents", "Profile");
+                        })
+)
+
+<style type="text/css">
+
+    .demo-section * + h4 {
+        margin-top: 2em;
+        overflow: hidden;
+        height: 950px;
+    }
+
+    .demo-section .k-tabstrip .k-content {
+        height: 140px;
+        background-color: dodgerblue;
+        overflow: hidden;
+        height: 950px;
+    }
+
+    #tabstrip .k-content {
+        overflow: hidden;
+        height:400px!important;
+    }
+</style>

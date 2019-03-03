@@ -1,0 +1,48 @@
+﻿@(Html.Kendo().Grid<HRM.Data.Entities.Job.JobTitle>
+                                        ()
+                                        .Name("grid")
+                                        .Columns(columns =>
+                                        {
+                                            columns.Bound(p => p.Title).Width(75);
+                                            columns.Bound(p => p.JobDescription).Width(75);
+                                            columns.Bound(p => p.Notes).Width(75);
+
+                                            columns.Bound(c => c.Attachments).ClientTemplate("<a href='" + Url.Content("~/Attachments/") + "#=Attachments#' alt='#=Title #'>#=Title#</a>").Width(75);
+                                            columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+                                        })
+                                        .ToolBar(toolbar => toolbar.Create())
+                                        .Editable(editable => editable.Mode(GridEditMode.PopUp))
+                                    .Pageable()
+                                    .Sortable()
+                                    .Scrollable()
+                                    .HtmlAttributes(new { style = "height:900px;" })
+                                    .HtmlAttributes(new { style = "width:1024px;" })
+                                    .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .PageSize(6)
+                                    .Events(events => events.Error("error_handler"))
+                                    .Model(model => model.Id(p => p.ID))
+                                    .Create(create => create.Action("JobTitlePopup_Create", "Job"))
+                                    .Read(read => read.Action("JobTitlePopup_Read", "Job"))
+                                    .Update(update => update.Action("JobTitlePopup_Update", "Job"))
+                                    .Destroy(delete => delete.Action("JobTitlePopup_Destroy", "Job"))
+                                    )
+)
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
+
+

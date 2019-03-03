@@ -1,0 +1,6 @@
+Demo for the GlobalXchange.
+
+1. Interface for uploading :- option a and b.
+2. master look up for the guidelines documents.
+3. Update all the fiels after the document is upladed (attributes).
+4. 
